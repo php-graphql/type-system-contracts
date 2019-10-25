@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <psalm
-    name="Example Psalm config with recommended defaults"
-    useDocblockTypes="true"
-    totallyTyped="true"
+        useDocblockTypes="true"
+        totallyTyped="true"
+        allowPhpStormGenerics="true"
 >
     <projectFiles>
-        <directory name="src" />
+        <directory name="src"/>
     </projectFiles>
 </psalm>

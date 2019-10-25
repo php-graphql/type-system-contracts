@@ -14,6 +14,7 @@ namespace GraphQL\Contracts\TypeSystem;
 use GraphQL\Contracts\TypeSystem\Type\TypeInterface;
 use GraphQL\Contracts\TypeSystem\Type\OutputTypeInterface;
 use GraphQL\Contracts\TypeSystem\Common\TypeAwareInterface;
+use GraphQL\Contracts\TypeSystem\Common\NameAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\ArgumentsAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DeprecationAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
@@ -45,10 +46,11 @@ use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
  */
 interface FieldInterface extends
     DefinitionInterface,
+    NameAwareInterface,
     DescriptionAwareInterface,
-    DeprecationAwareInterface,
     TypeAwareInterface,
-    ArgumentsAwareInterface
+    ArgumentsAwareInterface,
+    DeprecationAwareInterface
 {
 
 }

@@ -13,6 +13,7 @@ namespace GraphQL\Contracts\TypeSystem;
 
 use GraphQL\Contracts\TypeSystem\Type\InputTypeInterface;
 use GraphQL\Contracts\TypeSystem\Common\TypeAwareInterface;
+use GraphQL\Contracts\TypeSystem\Common\NameAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DefaultValueAwareInterface;
 
@@ -35,8 +36,9 @@ use GraphQL\Contracts\TypeSystem\Common\DefaultValueAwareInterface;
  */
 interface ArgumentInterface extends
     DefinitionInterface,
-    TypeAwareInterface,
+    NameAwareInterface,
     DescriptionAwareInterface,
+    TypeAwareInterface,
     DefaultValueAwareInterface
 {
 

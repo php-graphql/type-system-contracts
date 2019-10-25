@@ -1,0 +1,55 @@
+{
+    "name": "graphql/type-system-contracts",
+    "description": "A set of GraphQL Type System abstractions",
+    "license": "MIT",
+    "keywords": [
+        "graphql",
+        "sdl",
+        "abstractions",
+        "contracts",
+        "decoupling",
+        "interfaces",
+        "interoperability",
+        "standards"
+    ],
+    "homepage": "https://github.com/php-graphql",
+    "support": {
+        "issues": "https://github.com/php-graphql/type-system-contracts/issues",
+        "source": "https://github.com/php-graphql/type-system-contracts"
+    },
+    "authors": [
+        {
+            "name": "PHP GraphQL Interoperability Group",
+            "homepage": "https://github.com/php-graphql"
+        }
+    ],
+    "require": {
+        "php": "^7.1.4|^8.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "GraphQL\\Contracts\\TypeSystem\\": "src"
+        }
+    },
+    "require-dev": {
+        "vimeo/psalm": "^3.0",
+        "squizlabs/php_codesniffer": "~3.4",
+        "sensiolabs/security-checker": "~6.0"
+    },
+    "autoload-dev": {
+        "GraphQL\\Contracts\\TypeSystem\\Tests": "tests"
+    },
+    "suggest": {
+        "graphql/type-system-implementation": "Any GraphQL Type System implementation"
+    },
+    "scripts": {
+        "psalm": "@php vendor/vimeo/psalm/psalm",
+        "phpunit": "@php vendor/phpunit/phpunit/phpunit --testdox --debug -d tests",
+        "security": "@php vendor/sensiolabs/security-checker/security-checker security:check ./composer.lock",
+        "phpcs": "@php vendor/squizlabs/php_codesniffer/bin/phpcs --standard=PSR12 --colors --encoding=utf-8 --extensions=php src tests -p",
+        "phpcbf": "@php vendor/squizlabs/php_codesniffer/bin/phpcbf -s --colors --standard=PSR12 --encoding=utf-8 --extensions=php src tests"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

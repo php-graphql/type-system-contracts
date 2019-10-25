@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<psalm
+    name="Example Psalm config with recommended defaults"
+    useDocblockTypes="true"
+    totallyTyped="false"
+>
+    <projectFiles>
+        <directory name="src" />
+        <directory name="tests" />
+    </projectFiles>
+
+    <issueHandlers>
+        <!-- Causes false positives when props installing through arrays -->
+        <PropertyNotSetInConstructor errorLevel="suppress" />
+
+        <!-- May cause false positives when used with invariants -->
+        <RedundantConditionGivenDocblockType errorLevel="suppress" />
+    </issueHandlers>
+</psalm>

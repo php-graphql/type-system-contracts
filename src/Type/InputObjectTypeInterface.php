@@ -65,7 +65,8 @@ interface InputObjectTypeInterface extends
     public function hasField(string $name): bool;
 
     /**
-     * @return InputFieldInterface[]
+     * @psalm-return iterable<string, InputFieldInterface>
+     * @return iterable|InputFieldInterface[]
      */
     public function getFields(): iterable;
 }

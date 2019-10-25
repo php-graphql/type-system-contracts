@@ -50,7 +50,7 @@ interface UnionTypeInterface extends
     OutputTypeInterface
 {
     /**
-     * @param string|null $name
+     * @param string $name
      * @return ObjectTypeInterface
      */
     public function getType(string $name): ?ObjectTypeInterface;
@@ -62,7 +62,7 @@ interface UnionTypeInterface extends
     public function hasType(string $name): bool;
 
     /**
-     * @return iterable|ObjectTypeInterface[]
+     * @return ObjectTypeInterface[]
      */
     public function getTypes(): iterable;
 }

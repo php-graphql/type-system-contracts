@@ -73,7 +73,7 @@ interface EnumTypeInterface extends
     public function hasValue(string $name): bool;
 
     /**
-     * @return iterable|EnumValueInterface[]
+     * @return EnumValueInterface[]
      */
     public function getValues(): iterable;
 }

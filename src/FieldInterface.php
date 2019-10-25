@@ -50,4 +50,5 @@ interface FieldInterface extends
     TypeAwareInterface,
     ArgumentsAwareInterface
 {
+
 }

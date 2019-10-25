@@ -35,4 +35,5 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  */
 interface OutputTypeInterface extends TypeInterface
 {
+
 }

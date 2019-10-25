@@ -24,4 +24,5 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  */
 interface CompositeTypeInterface extends TypeInterface
 {
+
 }

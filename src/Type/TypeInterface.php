@@ -32,4 +32,5 @@ use GraphQL\Contracts\TypeSystem\Common\DeprecationAwareInterface;
  */
 interface TypeInterface extends DefinitionInterface
 {
+
 }

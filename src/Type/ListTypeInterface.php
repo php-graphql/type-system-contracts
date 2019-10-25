@@ -36,4 +36,5 @@ interface ListTypeInterface extends
     InputTypeInterface,
     NullableTypeInterface
 {
+
 }

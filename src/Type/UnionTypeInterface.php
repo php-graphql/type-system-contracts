@@ -65,5 +65,4 @@ interface UnionTypeInterface extends
      * @return iterable|ObjectTypeInterface[]
      */
     public function getTypes(): iterable;
-
 }

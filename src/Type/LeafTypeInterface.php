@@ -23,4 +23,5 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  */
 interface LeafTypeInterface extends TypeInterface
 {
+
 }

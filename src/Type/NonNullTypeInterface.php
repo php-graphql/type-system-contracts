@@ -37,4 +37,5 @@ interface NonNullTypeInterface extends
     OutputTypeInterface,
     InputTypeInterface
 {
+
 }

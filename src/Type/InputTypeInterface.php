@@ -31,4 +31,5 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  */
 interface InputTypeInterface extends TypeInterface
 {
+
 }

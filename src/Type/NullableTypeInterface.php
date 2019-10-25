@@ -28,4 +28,5 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  */
 interface NullableTypeInterface extends TypeInterface
 {
+
 }

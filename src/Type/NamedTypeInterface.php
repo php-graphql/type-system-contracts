@@ -33,4 +33,5 @@ interface NamedTypeInterface extends
     NameAwareInterface,
     DescriptionAwareInterface
 {
+
 }

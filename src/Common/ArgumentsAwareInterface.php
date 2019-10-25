@@ -33,5 +33,5 @@ interface ArgumentsAwareInterface
     /**
      * @return ArgumentInterface[]
      */
-    public function getArguments(): array;
+    public function getArguments(): iterable;
 }

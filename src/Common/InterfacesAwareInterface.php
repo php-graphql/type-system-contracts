@@ -33,5 +33,5 @@ interface InterfacesAwareInterface
     /**
      * @return InterfaceTypeInterface[]
      */
-    public function getInterfaces(): array;
+    public function getInterfaces(): iterable;
 }

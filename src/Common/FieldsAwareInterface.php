@@ -33,5 +33,5 @@ interface FieldsAwareInterface
     /**
      * @return FieldInterface[]
      */
-    public function getFields(): array;
+    public function getFields(): iterable;
 }

@@ -72,7 +72,7 @@ interface SchemaInterface extends DefinitionInterface
     public function getSubscriptionType(): ?ObjectTypeInterface;
 
     /**
-     * @return iterable|NamedTypeInterface[]
+     * @return NamedTypeInterface[]
      */
     public function getTypeMap(): iterable;
 
@@ -84,7 +84,7 @@ interface SchemaInterface extends DefinitionInterface
 
     /**
      * @param AbstractTypeInterface $abstractType
-     * @return iterable|ObjectTypeInterface[]
+     * @return ObjectTypeInterface[]
      */
     public function getPossibleTypes(AbstractTypeInterface $abstractType): iterable;
 
@@ -96,7 +96,7 @@ interface SchemaInterface extends DefinitionInterface
     public function isPossibleType(AbstractTypeInterface $abstract, ObjectTypeInterface $possible): bool;
 
     /**
-     * @return iterable|DirectiveInterface[]
+     * @return DirectiveInterface[]
      */
     public function getDirectives(): iterable;
 

@@ -45,9 +45,6 @@ use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
  *      inspect(): string;
  *  }
  * </code>
- *
- * @see https://graphql.github.io/graphql-spec/draft/#sec-Language.Directives
- * @see https://github.com/graphql/graphql-js/blob/master/src/type/directives.d.ts#L15
  */
 interface DirectiveInterface extends
     DefinitionInterface,

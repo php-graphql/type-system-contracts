@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace GraphQL\Contracts\TypeSystem;
 
+use GraphQL\Contracts\TypeSystem\Type\InputTypeInterface;
 use GraphQL\Contracts\TypeSystem\Common\TypeAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DefaultValueAwareInterface;
@@ -29,6 +30,8 @@ use GraphQL\Contracts\TypeSystem\Common\DefaultValueAwareInterface;
  *      astNode?: Maybe<InputValueDefinitionNode>;
  *  }
  * </code>
+ *
+ * @method InputTypeInterface getType()
  */
 interface InputFieldInterface extends
     DefinitionInterface,

@@ -11,11 +11,9 @@ declare(strict_types=1);
 
 namespace GraphQL\Contracts\TypeSystem;
 
-use GraphQL\Contracts\TypeSystem\Type\ObjectTypeInterface;
-use GraphQL\Contracts\TypeSystem\Type\InterfaceTypeInterface;
 use GraphQL\Contracts\TypeSystem\Type\NamedTypeInterface;
+use GraphQL\Contracts\TypeSystem\Type\ObjectTypeInterface;
 use GraphQL\Contracts\TypeSystem\Type\AbstractTypeInterface;
-use GraphQL\Contracts\TypeSystem\Schema\InterfaceImplementationsInterface;
 
 /**
  * Schema Definition

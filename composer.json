@@ -34,8 +34,8 @@
     },
     "require-dev": {
         "vimeo/psalm": "^3.6",
-        "squizlabs/php_codesniffer": "~3.4",
-        "sensiolabs/security-checker": "~6.0"
+        "squizlabs/php_codesniffer": "^3.5",
+        "sensiolabs/security-checker": "^6.0"
     },
     "suggest": {
         "graphql/type-system-implementation": "Any GraphQL Type System implementation"

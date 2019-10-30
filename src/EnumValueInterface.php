@@ -11,9 +11,6 @@ declare(strict_types=1);
 
 namespace GraphQL\Contracts\TypeSystem;
 
-use GraphQL\Contracts\TypeSystem\Common\NameTrait;
-use GraphQL\Contracts\TypeSystem\Common\DescriptionTrait;
-use GraphQL\Contracts\TypeSystem\Common\DeprecationTrait;
 use GraphQL\Contracts\TypeSystem\Common\NameAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DeprecationAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;

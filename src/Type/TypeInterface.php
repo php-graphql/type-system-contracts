@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace GraphQL\Contracts\TypeSystem\Type;
 
 use GraphQL\Contracts\TypeSystem\DefinitionInterface;
-use GraphQL\Contracts\TypeSystem\Common\DeprecationAwareInterface;
 
 /**
  * These are all of the possible kinds of types.

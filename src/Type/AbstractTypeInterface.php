@@ -24,12 +24,12 @@ namespace GraphQL\Contracts\TypeSystem\Type;
 interface AbstractTypeInterface extends NamedTypeInterface
 {
     /**
-     * Resolves concrete ObjectTypeInterface for given object value
+     * Resolves concrete NamedTypeInterface for given object value
      *
      * @param object $objectValue
      * @param mixed $context
      * @param mixed ...$args
-     * @return ObjectTypeInterface|null
+     * @return NamedTypeInterface|null
      */
-    public function resolveType($objectValue, $context, ...$args): ?ObjectTypeInterface;
+    public function resolveType($objectValue, $context, ...$args): ?NamedTypeInterface;
 }

@@ -21,7 +21,7 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  *  ;
  * </code>
  */
-interface AbstractTypeInterface extends TypeInterface
+interface AbstractTypeInterface extends NamedTypeInterface
 {
 
 }

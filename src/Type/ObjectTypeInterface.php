@@ -11,9 +11,7 @@ declare(strict_types=1);
 
 namespace GraphQL\Contracts\TypeSystem\Type;
 
-use GraphQL\Contracts\TypeSystem\Common\FieldsTrait;
 use GraphQL\Contracts\TypeSystem\Common\FieldsAwareInterface;
-use GraphQL\Contracts\TypeSystem\Common\ImplementedInterfacesTrait;
 use GraphQL\Contracts\TypeSystem\Common\InterfacesAwareInterface;
 
 /**

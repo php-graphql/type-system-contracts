@@ -36,14 +36,13 @@
     "require-dev": {
         "vimeo/psalm": "^4.7",
         "squizlabs/php_codesniffer": "^3.5",
-        "sensiolabs/security-checker": "^6.0"
+        "roave/security-advisories": "dev-latest"
     },
     "suggest": {
         "graphql/type-system-implementation": "Any GraphQL Type System implementation"
     },
     "scripts": {
         "test": [
-            "security-checker security:check ./composer.lock",
             "psalm --no-cache",
             "phpcs --standard=PSR12 --colors --encoding=utf-8 --extensions=php src -p"
         ],

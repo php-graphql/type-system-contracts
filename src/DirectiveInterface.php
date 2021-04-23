@@ -26,23 +26,24 @@ use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
  *  export class GraphQLDirective {
  *      name: string;
  *      description: Maybe<string>;
- *      locations: DirectiveLocationEnum[];
+ *      locations: Array<DirectiveLocationEnum>;
  *      isRepeatable: boolean;
- *      args: GraphQLArgument[];
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      args: Array<GraphQLArgument>;
+ *      extensions: Maybe<Readonly<GraphQLDirectiveExtensions>>;
  *      astNode: Maybe<DirectiveDefinitionNode>;
  *
- *      constructor(config: GraphQLDirectiveConfig);
+ *      constructor(config: Readonly<GraphQLDirectiveConfig>);
  *
  *      toConfig(): GraphQLDirectiveConfig & {
  *          args: GraphQLFieldConfigArgumentMap;
  *          isRepeatable: boolean;
- *          extensions: Maybe<Readonly<Record<string, any>>>;
+ *          extensions: Maybe<Readonly<GraphQLDirectiveExtensions>>;
  *      };
  *
  *      toString(): string;
  *      toJSON(): string;
  *      inspect(): string;
+ *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
  */

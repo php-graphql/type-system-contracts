@@ -25,6 +25,7 @@
     ],
     "require": {
         "php": "^7.1.4|^8.0",
+        "symfony/polyfill-php80": "^1.22",
         "ext-json": "*"
     },
     "autoload": {

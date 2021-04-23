@@ -11,9 +11,6 @@ declare(strict_types=1);
 
 namespace GraphQL\Contracts\TypeSystem\Common;
 
-/**
- * Interface DefaultValueAwareInterface
- */
 interface DefaultValueAwareInterface
 {
     /**

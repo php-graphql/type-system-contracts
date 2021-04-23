@@ -23,22 +23,23 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  *      name: string;
  *      description: Maybe<string>;
  *      resolveType: Maybe<GraphQLTypeResolver<any, any>>;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      extensions: Maybe<Readonly<GraphQLUnionTypeExtensions>>;
  *      astNode: Maybe<UnionTypeDefinitionNode>;
- *      extensionASTNodes: Maybe<ReadonlyArray<UnionTypeExtensionNode>>;
+ *      extensionASTNodes: ReadonlyArray<UnionTypeExtensionNode>;
  *
- *      constructor(config: GraphQLUnionTypeConfig<any, any>);
- *      getTypes(): GraphQLObjectType[];
+ *      constructor(config: Readonly<GraphQLUnionTypeConfig<any, any>>);
+ *      getTypes(): Array<GraphQLObjectType>;
  *
  *      toConfig(): GraphQLUnionTypeConfig<any, any> & {
- *          types: GraphQLObjectType[];
- *          extensions: Maybe<Readonly<Record<string, any>>>;
+ *          types: Array<GraphQLObjectType>;
+ *          extensions: Maybe<Readonly<GraphQLUnionTypeExtensions>>;
  *          extensionASTNodes: ReadonlyArray<UnionTypeExtensionNode>;
  *      };
  *
  *      toString(): string;
  *      toJSON(): string;
  *      inspect(): string;
+ *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
  */
@@ -62,8 +63,7 @@ interface UnionTypeInterface extends
     public function hasType(string $name): bool;
 
     /**
-     * @psalm-return iterable<string, ObjectTypeInterface>
-     * @return iterable|ObjectTypeInterface[]
+     * @return iterable<string, ObjectTypeInterface>
      */
     public function getTypes(): iterable;
 }

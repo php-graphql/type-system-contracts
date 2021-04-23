@@ -28,22 +28,23 @@ use GraphQL\Contracts\TypeSystem\InputFieldInterface;
  *  export class GraphQLInputObjectType {
  *      name: string;
  *      description: Maybe<string>;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      extensions: Maybe<Readonly<GraphQLInputObjectTypeExtensions>>;
  *      astNode: Maybe<InputObjectTypeDefinitionNode>;
- *      extensionASTNodes: Maybe<ReadonlyArray<InputObjectTypeExtensionNode>>;
+ *      extensionASTNodes: ReadonlyArray<InputObjectTypeExtensionNode>;
  *
- *      constructor(config: GraphQLInputObjectTypeConfig);
+ *      constructor(config: Readonly<GraphQLInputObjectTypeConfig>);
  *      getFields(): GraphQLInputFieldMap;
  *
  *      toConfig(): GraphQLInputObjectTypeConfig & {
  *          fields: GraphQLInputFieldConfigMap;
- *          extensions: Maybe<Readonly<Record<string, any>>>;
+ *          extensions: Maybe<Readonly<GraphQLInputObjectTypeExtensions>>;
  *          extensionASTNodes: ReadonlyArray<InputObjectTypeExtensionNode>;
  *      };
  *
  *      toString(): string;
  *      toJSON(): string;
  *      inspect(): string;
+ *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
  */
@@ -65,8 +66,7 @@ interface InputObjectTypeInterface extends
     public function hasField(string $name): bool;
 
     /**
-     * @psalm-return iterable<string, InputFieldInterface>
-     * @return iterable|InputFieldInterface[]
+     * @return iterable<string, InputFieldInterface>
      */
     public function getFields(): iterable;
 }

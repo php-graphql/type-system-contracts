@@ -24,13 +24,20 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  * except runtime and vendor-specific data.
  *
  * <code>
- *  interface GraphQLNonNull<T extends GraphQLNullableType> {
+ *  export class GraphQLNonNull<T extends GraphQLNullableType> {
  *      readonly ofType: T;
- *      toString(): string;
- *      toJSON(): string;
- *      inspect(): string;
+ *
+ *      constructor(type: T);
+ *
+ *      toString: () => string;
+ *      toJSON: () => string;
+ *      inspect: () => string;
+ *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
+ *
+ * @template T of TypeInterface
+ * @template-implements WrappingTypeInterface<T>
  */
 interface NonNullTypeInterface extends
     WrappingTypeInterface,

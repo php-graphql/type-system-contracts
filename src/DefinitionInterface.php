@@ -14,16 +14,17 @@ namespace GraphQL\Contracts\TypeSystem;
 /**
  * Tagging interface for GraphQL definitions (schema, types, directive, etc.).
  *
- * Note: Implementing the `\JsonSerializable` interface is an alternative to
- * the `toJSON()` method, which is defined in the reference JS implementation.
+ * Note: Implementing the {@see \JsonSerializable} interface is an alternative
+ * to the `toJSON()` method, which is defined in the reference JS
+ * implementation.
  */
-interface DefinitionInterface extends \JsonSerializable
+interface DefinitionInterface extends \JsonSerializable, \Stringable
 {
     /**
      * An alternative to the `toString()` and `inspect()` methods, which is
      * described in the reference implementation.
      *
-     * @return string
+     * {@inheritDoc}
      */
     public function __toString(): string;
 }

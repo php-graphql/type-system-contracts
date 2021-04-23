@@ -22,13 +22,20 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  * except runtime and vendor-specific data.
  *
  * <code>
- *  interface GraphQLList<T extends GraphQLType> {
+ *  export class GraphQLList<T extends GraphQLType> {
  *      readonly ofType: T;
- *      toString(): string;
- *      toJSON(): string;
- *      inspect(): string;
+ *
+ *      constructor(type: T);
+ *
+ *      toString: () => string;
+ *      toJSON: () => string;
+ *      inspect: () => string;
+ *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
+ *
+ * @template T of TypeInterface
+ * @template-implements WrappingTypeInterface<T>
  */
 interface ListTypeInterface extends
     WrappingTypeInterface,

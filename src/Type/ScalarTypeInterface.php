@@ -25,20 +25,22 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  *  export class GraphQLScalarType {
  *      name: string;
  *      description: Maybe<string>;
- *      serialize: GraphQLScalarSerializer<any>;
- *      parseValue: GraphQLScalarValueParser<any>;
- *      parseLiteral: GraphQLScalarLiteralParser<any>;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      specifiedByURL: Maybe<string>;
+ *      serialize: GraphQLScalarSerializer<unknown>;
+ *      parseValue: GraphQLScalarValueParser<unknown>;
+ *      parseLiteral: GraphQLScalarLiteralParser<unknown>;
+ *      extensions: Maybe<Readonly<GraphQLScalarTypeExtensions>>;
  *      astNode: Maybe<ScalarTypeDefinitionNode>;
- *      extensionASTNodes: Maybe<ReadonlyArray<ScalarTypeExtensionNode>>;
+ *      extensionASTNodes: ReadonlyArray<ScalarTypeExtensionNode>;
  *
- *      constructor(config: GraphQLScalarTypeConfig<any, any>);
+ *      constructor(config: Readonly<GraphQLScalarTypeConfig<unknown, unknown>>);
  *
- *      toConfig(): GraphQLScalarTypeConfig<any, any> & {
- *          serialize: GraphQLScalarSerializer<any>;
- *          parseValue: GraphQLScalarValueParser<any>;
- *          parseLiteral: GraphQLScalarLiteralParser<any>;
- *          extensions: Maybe<Readonly<Record<string, any>>>;
+ *      toConfig(): GraphQLScalarTypeConfig<unknown, unknown> & {
+ *          specifiedByURL: Maybe<string>;
+ *          serialize: GraphQLScalarSerializer<unknown>;
+ *          parseValue: GraphQLScalarValueParser<unknown>;
+ *          parseLiteral: GraphQLScalarLiteralParser<unknown>;
+ *          extensions: Maybe<Readonly<GraphQLScalarTypeExtensions>>;
  *          extensionASTNodes: ReadonlyArray<ScalarTypeExtensionNode>;
  *      };
  *
@@ -55,5 +57,12 @@ interface ScalarTypeInterface extends
     NullableTypeInterface,
     OutputTypeInterface
 {
-
+    /**
+     * An optional URI to custom scalar definitions pointing to a document
+     * holding data-format, serialization, and coercion rules for the scalar.
+     *
+     * @see https://github.com/graphql/graphql-spec/issues/635
+     * @return string|null
+     */
+    public function specifiedByUrl(): ?string;
 }

@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace GraphQL\Contracts\TypeSystem\Type;
 
 use GraphQL\Contracts\TypeSystem\Common\FieldsAwareInterface;
+use GraphQL\Contracts\TypeSystem\Common\InterfacesAwareInterface;
 
 /**
  * Interface Type Definition
@@ -29,23 +30,25 @@ use GraphQL\Contracts\TypeSystem\Common\FieldsAwareInterface;
  *      name: string;
  *      description: Maybe<string>;
  *      resolveType: Maybe<GraphQLTypeResolver<any, any>>;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      extensions: Maybe<Readonly<GraphQLInterfaceTypeExtensions>>;
  *      astNode?: Maybe<InterfaceTypeDefinitionNode>;
- *      extensionASTNodes: Maybe<ReadonlyArray<InterfaceTypeExtensionNode>>;
+ *      extensionASTNodes: ReadonlyArray<InterfaceTypeExtensionNode>;
  *
- *      constructor(config: GraphQLInterfaceTypeConfig<any, any>);
- *
+ *      constructor(config: Readonly<GraphQLInterfaceTypeConfig<any, any>>);
  *      getFields(): GraphQLFieldMap<any, any>;
+ *      getInterfaces(): Array<GraphQLInterfaceType>;
  *
  *      toConfig(): GraphQLInterfaceTypeConfig<any, any> & {
+ *          interfaces: Array<GraphQLInterfaceType>;
  *          fields: GraphQLFieldConfigMap<any, any>;
- *          extensions: Maybe<Readonly<Record<string, any>>>;
+ *          extensions: Maybe<Readonly<GraphQLInterfaceTypeExtensions>>;
  *          extensionASTNodes: ReadonlyArray<InterfaceTypeExtensionNode>;
  *      };
  *
  *      toString(): string;
  *      toJSON(): string;
  *      inspect(): string;
+ *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
  */
@@ -55,7 +58,8 @@ interface InterfaceTypeInterface extends
     CompositeTypeInterface,
     NullableTypeInterface,
     OutputTypeInterface,
-    FieldsAwareInterface
+    FieldsAwareInterface,
+    InterfacesAwareInterface
 {
 
 }

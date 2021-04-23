@@ -13,9 +13,6 @@ namespace GraphQL\Contracts\TypeSystem\Common;
 
 use GraphQL\Contracts\TypeSystem\Type\InterfaceTypeInterface;
 
-/**
- * Interface ImplementInterfacesAwareInterface
- */
 interface InterfacesAwareInterface
 {
     /**
@@ -31,8 +28,7 @@ interface InterfacesAwareInterface
     public function hasInterface(string $name): bool;
 
     /**
-     * @psalm-return iterable<string, InterfaceTypeInterface>
-     * @return iterable|InterfaceTypeInterface[]
+     * @return iterable<string, InterfaceTypeInterface>
      */
     public function getInterfaces(): iterable;
 }

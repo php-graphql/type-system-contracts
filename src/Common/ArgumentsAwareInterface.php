@@ -13,9 +13,6 @@ namespace GraphQL\Contracts\TypeSystem\Common;
 
 use GraphQL\Contracts\TypeSystem\ArgumentInterface;
 
-/**
- * Interface ArgumentsAwareInterface
- */
 interface ArgumentsAwareInterface
 {
     /**
@@ -31,8 +28,7 @@ interface ArgumentsAwareInterface
     public function hasArgument(string $name): bool;
 
     /**
-     * @psalm-return iterable<string, ArgumentInterface>
-     * @return iterable|ArgumentInterface[]
+     * @return iterable<string, ArgumentInterface>
      */
     public function getArguments(): iterable;
 }

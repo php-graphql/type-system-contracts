@@ -24,32 +24,30 @@ use GraphQL\Contracts\TypeSystem\Common\InterfacesAwareInterface;
  * except runtime and vendor-specific data.
  *
  * <code>
- *  export class GraphQLObjectType<
- *      TSource = any,
- *      TContext = any,
- *      TArgs = { [key: string]: any }
- *  > {
+ *  export class GraphQLObjectType<TSource = any, TContext = any> {
  *      name: string;
  *      description: Maybe<string>;
  *      isTypeOf: Maybe<GraphQLIsTypeOfFn<TSource, TContext>>;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      extensions: Maybe<Readonly<GraphQLObjectTypeExtensions<TSource, TContext>>>;
  *      astNode: Maybe<ObjectTypeDefinitionNode>;
- *      extensionASTNodes: Maybe<ReadonlyArray<ObjectTypeExtensionNode>>;
+ *      extensionASTNodes: ReadonlyArray<ObjectTypeExtensionNode>;
  *
- *      constructor(config: GraphQLObjectTypeConfig<TSource, TContext, TArgs>);
- *      getFields(): GraphQLFieldMap<any, TContext, TArgs>;
- *      getInterfaces(): GraphQLInterfaceType[];
+ *      constructor(config: Readonly<GraphQLObjectTypeConfig<TSource, TContext>>);
+ *
+ *      getFields(): GraphQLFieldMap<any, TContext>;
+ *      getInterfaces(): Array<GraphQLInterfaceType>;
  *
  *      toConfig(): GraphQLObjectTypeConfig<any, any> & {
- *          interfaces: GraphQLInterfaceType[];
+ *          interfaces: Array<GraphQLInterfaceType>;
  *          fields: GraphQLFieldConfigMap<any, any>;
- *          extensions: Maybe<Readonly<Record<string, any>>>;
+ *          extensions: Maybe<Readonly<GraphQLObjectTypeExtensions<TSource, TContext>>>;
  *          extensionASTNodes: ReadonlyArray<ObjectTypeExtensionNode>;
  *      };
  *
  *      toString(): string;
  *      toJSON(): string;
  *      inspect(): string;
+ *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
  */

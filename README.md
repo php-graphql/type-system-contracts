@@ -15,7 +15,7 @@ A set of GraphQL Type System abstractions.
 
 Can be used to build on semantics of applications that using the 
 GraphQL Type System, which is based on the 
-[reference GraphQL 14.5 JavaScript implementation](https://github.com/graphql/graphql-js/tree/v14.5.0)
+[reference GraphQL 15.5 JavaScript implementation](https://github.com/graphql/graphql-js/tree/v15.5.0)
 
 ## License
 

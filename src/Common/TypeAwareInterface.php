@@ -14,12 +14,12 @@ namespace GraphQL\Contracts\TypeSystem\Common;
 use GraphQL\Contracts\TypeSystem\Type\TypeInterface;
 
 /**
- * Interface TypeAwareInterface
+ * @template-covariant T of TypeInterface
  */
 interface TypeAwareInterface
 {
     /**
-     * @return TypeInterface
+     * @return T
      */
     public function getType(): TypeInterface;
 }

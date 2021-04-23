@@ -69,8 +69,7 @@ interface DirectiveInterface extends
     public function hasLocation(string $name): bool;
 
     /**
-     * @psalm-return iterable<int, string>
-     * @return iterable|string[]
+     * @return iterable<array-key, string>
      */
     public function getLocations(): iterable;
 }

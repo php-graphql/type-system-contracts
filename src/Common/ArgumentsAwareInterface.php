@@ -31,8 +31,7 @@ interface ArgumentsAwareInterface
     public function hasArgument(string $name): bool;
 
     /**
-     * @psalm-return iterable<string, ArgumentInterface>
-     * @return iterable|ArgumentInterface[]
+     * @return iterable<string, ArgumentInterface>
      */
     public function getArguments(): iterable;
 }

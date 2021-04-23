@@ -63,8 +63,7 @@ interface UnionTypeInterface extends
     public function hasType(string $name): bool;
 
     /**
-     * @psalm-return iterable<string, ObjectTypeInterface>
-     * @return iterable|ObjectTypeInterface[]
+     * @return iterable<string, ObjectTypeInterface>
      */
     public function getTypes(): iterable;
 }

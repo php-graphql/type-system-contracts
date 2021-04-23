@@ -31,8 +31,7 @@ interface FieldsAwareInterface
     public function hasField(string $name): bool;
 
     /**
-     * @psalm-return iterable<string, FieldInterface>
-     * @return iterable|FieldInterface[]
+     * @return iterable<string, FieldInterface>
      */
     public function getFields(): iterable;
 }

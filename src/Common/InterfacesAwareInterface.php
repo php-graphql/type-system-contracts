@@ -31,8 +31,7 @@ interface InterfacesAwareInterface
     public function hasInterface(string $name): bool;
 
     /**
-     * @psalm-return iterable<string, InterfaceTypeInterface>
-     * @return iterable|InterfaceTypeInterface[]
+     * @return iterable<string, InterfaceTypeInterface>
      */
     public function getInterfaces(): iterable;
 }

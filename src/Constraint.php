@@ -312,7 +312,6 @@ final class Constraint
      * @param ArgumentInterface $arg
      * @return bool
      */
-    #[Pure]
     public static function isRequiredArgument(ArgumentInterface $arg): bool
     {
         return self::isNonNullType($arg->getType()) && ! $arg->hasDefaultValue();
@@ -344,7 +343,6 @@ final class Constraint
      * @param InputFieldInterface $field
      * @return bool
      */
-    #[Pure]
     public static function isRequiredInputField(InputFieldInterface $field): bool
     {
         return self::isNonNullType($field->getType()) && ! $field->hasDefaultValue();

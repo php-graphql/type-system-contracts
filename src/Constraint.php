@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace GraphQL\Contracts\TypeSystem;
 
+use JetBrains\PhpStorm\Pure;
 use GraphQL\Contracts\TypeSystem\Type\{
     TypeInterface,
     EnumTypeInterface,
@@ -55,6 +56,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isType($type): bool
     {
         return $type instanceof TypeInterface;
@@ -70,6 +72,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isScalarType($type): bool
     {
         return $type instanceof ScalarTypeInterface;
@@ -85,6 +88,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isObjectType($type): bool
     {
         return $type instanceof ObjectTypeInterface;
@@ -100,6 +104,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isInterfaceType($type): bool
     {
         return $type instanceof InterfaceTypeInterface;
@@ -115,6 +120,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isUnionType($type): bool
     {
         return $type instanceof UnionTypeInterface;
@@ -130,6 +136,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isEnumType($type): bool
     {
         return $type instanceof EnumTypeInterface;
@@ -145,6 +152,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isInputObjectType($type): bool
     {
         return $type instanceof InputObjectTypeInterface;
@@ -160,6 +168,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isListType($type): bool
     {
         return $type instanceof ListTypeInterface;
@@ -175,6 +184,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isInputType($type): bool
     {
         return $type instanceof InputTypeInterface;
@@ -190,6 +200,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isOutputType($type): bool
     {
         return $type instanceof OutputTypeInterface;
@@ -205,6 +216,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isLeafType($type): bool
     {
         return $type instanceof LeafTypeInterface;
@@ -220,6 +232,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isCompositeType($type): bool
     {
         return $type instanceof CompositeTypeInterface;
@@ -235,6 +248,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isAbstractType($type): bool
     {
         return $type instanceof AbstractTypeInterface;
@@ -250,6 +264,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isWrappingType($type): bool
     {
         return $type instanceof WrappingTypeInterface;
@@ -265,6 +280,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isNullableType($type): bool
     {
         return $type instanceof NullableTypeInterface;
@@ -280,6 +296,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isNamedType($type): bool
     {
         return $type instanceof NamedTypeInterface;
@@ -295,6 +312,7 @@ final class Constraint
      * @param ArgumentInterface $arg
      * @return bool
      */
+    #[Pure]
     public static function isRequiredArgument(ArgumentInterface $arg): bool
     {
         return self::isNonNullType($arg->getType()) && ! $arg->hasDefaultValue();
@@ -310,6 +328,7 @@ final class Constraint
      * @param object $type
      * @return bool
      */
+    #[Pure]
     public static function isNonNullType($type): bool
     {
         return $type instanceof NonNullTypeInterface;
@@ -325,6 +344,7 @@ final class Constraint
      * @param InputFieldInterface $field
      * @return bool
      */
+    #[Pure]
     public static function isRequiredInputField(InputFieldInterface $field): bool
     {
         return self::isNonNullType($field->getType()) && ! $field->hasDefaultValue();

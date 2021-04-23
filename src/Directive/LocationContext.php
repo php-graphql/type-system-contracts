@@ -51,6 +51,7 @@ final class LocationContext
      * @param LocationContextType $expected
      * @return bool
      */
+    #[Pure]
     public function is(
         #[ExpectedValues(valuesFromClass: LocationContext::class)]
         int $expected

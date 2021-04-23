@@ -20,11 +20,13 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  *      | GraphQLNonNull<any>
  *  ;
  * </code>
+ *
+ * @template T of TypeInterface
  */
 interface WrappingTypeInterface extends TypeInterface
 {
     /**
-     * @return TypeInterface
+     * @return T
      */
     public function getOfType(): TypeInterface;
 }

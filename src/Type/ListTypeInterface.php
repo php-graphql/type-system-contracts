@@ -33,6 +33,9 @@ namespace GraphQL\Contracts\TypeSystem\Type;
  *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
+ *
+ * @template T of TypeInterface
+ * @template-implements WrappingTypeInterface<T>
  */
 interface ListTypeInterface extends
     WrappingTypeInterface,

@@ -41,7 +41,7 @@ final class Constraint
     /**
      * Constraint constructor.
      */
-    public function __construct()
+    private function __construct()
     {
         throw new \LogicException('Can not create instance of static class');
     }

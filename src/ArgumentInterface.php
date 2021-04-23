@@ -26,8 +26,9 @@ use GraphQL\Contracts\TypeSystem\Common\DefaultValueAwareInterface;
  *      name: string;
  *      description: Maybe<string>;
  *      type: GraphQLInputType;
- *      defaultValue: any;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      defaultValue: unknown;
+ *      deprecationReason: Maybe<string>;
+ *      extensions: Maybe<Readonly<GraphQLArgumentExtensions>>;
  *      astNode: Maybe<InputValueDefinitionNode>;
  *  }
  * </code>

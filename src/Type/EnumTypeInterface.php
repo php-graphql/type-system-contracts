@@ -27,29 +27,29 @@ use GraphQL\Contracts\TypeSystem\EnumValueInterface;
  *  export class GraphQLEnumType {
  *      name: string;
  *      description: Maybe<string>;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      extensions: Maybe<Readonly<GraphQLEnumTypeExtensions>>;
  *      astNode: Maybe<EnumTypeDefinitionNode>;
- *      extensionASTNodes: Maybe<ReadonlyArray<EnumTypeExtensionNode>>;
+ *      extensionASTNodes: ReadonlyArray<EnumTypeExtensionNode>;
  *
- *      constructor(config: GraphQLEnumTypeConfig);
- *
- *      getValues(): GraphQLEnumValue[];
+ *      constructor(config: Readonly<GraphQLEnumTypeConfig>);
+ *      getValues(): Array<GraphQLEnumValue>;
  *      getValue(name: string): Maybe<GraphQLEnumValue>;
- *      serialize(value: any): Maybe<string>;
- *      parseValue(value: any): Maybe<any>;
+ *      serialize(value: unknown): Maybe<string>;
+ *      parseValue(value: unknown): Maybe<any>;
  *      parseLiteral(
  *          valueNode: ValueNode,
- *          _variables: Maybe<{ [key: string]: any }>,
+ *          _variables: Maybe<ObjMap<unknown>>,
  *      ): Maybe<any>;
  *
  *      toConfig(): GraphQLEnumTypeConfig & {
- *          extensions: Maybe<Readonly<Record<string, any>>>;
+ *          extensions: Maybe<Readonly<GraphQLEnumTypeExtensions>>;
  *          extensionASTNodes: ReadonlyArray<EnumTypeExtensionNode>;
  *      };
  *
  *      toString(): string;
  *      toJSON(): string;
  *      inspect(): string;
+ *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
  */

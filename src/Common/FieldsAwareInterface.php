@@ -13,9 +13,6 @@ namespace GraphQL\Contracts\TypeSystem\Common;
 
 use GraphQL\Contracts\TypeSystem\FieldInterface;
 
-/**
- * Interface FieldsAwareInterface
- */
 interface FieldsAwareInterface
 {
     /**

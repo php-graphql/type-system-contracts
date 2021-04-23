@@ -13,9 +13,6 @@ namespace GraphQL\Contracts\TypeSystem\Common;
 
 use GraphQL\Contracts\TypeSystem\ArgumentInterface;
 
-/**
- * Interface ArgumentsAwareInterface
- */
 interface ArgumentsAwareInterface
 {
     /**

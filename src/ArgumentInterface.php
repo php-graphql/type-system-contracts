@@ -35,6 +35,7 @@ use GraphQL\Contracts\TypeSystem\Common\DefaultValueAwareInterface;
  * </code>
  *
  * @method InputTypeInterface getType()
+ * @template-implements TypeAwareInterface<InputTypeInterface>
  */
 interface ArgumentInterface extends
     DefinitionInterface,

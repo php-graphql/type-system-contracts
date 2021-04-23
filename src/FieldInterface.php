@@ -41,6 +41,7 @@ use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
  * </code>
  *
  * @method OutputTypeInterface getType()
+ * @template-implements TypeAwareInterface<OutputTypeInterface>
  */
 interface FieldInterface extends
     DefinitionInterface,

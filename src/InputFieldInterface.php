@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace GraphQL\Contracts\TypeSystem;
 
+use GraphQL\Contracts\TypeSystem\Common\DeprecationAwareInterface;
 use GraphQL\Contracts\TypeSystem\Type\InputTypeInterface;
 use GraphQL\Contracts\TypeSystem\Common\TypeAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\NameAwareInterface;
@@ -26,8 +27,9 @@ use GraphQL\Contracts\TypeSystem\Common\DefaultValueAwareInterface;
  *      name: string;
  *      description?: Maybe<string>;
  *      type: GraphQLInputType;
- *      defaultValue?: any;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      defaultValue?: unknown;
+ *      deprecationReason: Maybe<string>;
+ *      extensions: Maybe<Readonly<GraphQLInputFieldExtensions>>;
  *      astNode?: Maybe<InputValueDefinitionNode>;
  *  }
  * </code>
@@ -39,7 +41,8 @@ interface InputFieldInterface extends
     NameAwareInterface,
     DescriptionAwareInterface,
     TypeAwareInterface,
-    DefaultValueAwareInterface
+    DefaultValueAwareInterface,
+    DeprecationAwareInterface
 {
 
 }

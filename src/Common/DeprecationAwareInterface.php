@@ -24,6 +24,7 @@ interface DeprecationAwareInterface
     public function getDeprecationReason(): ?string;
 
     /**
+     * @deprecated Please, use {@see DeprecationAwareInterface::getDeprecationReason()} method instead.
      * @return bool
      */
     public function isDeprecated(): bool;

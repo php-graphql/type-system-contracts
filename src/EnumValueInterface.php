@@ -27,9 +27,8 @@ use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
  *      name: string;
  *      description: Maybe<string>;
  *      value: any;
- *      isDeprecated?: boolean;
  *      deprecationReason: Maybe<string>;
- *      extensions: Maybe<Readonly<Record<string, any>>>;
+ *      extensions: Maybe<Readonly<GraphQLEnumValueExtensions>>;
  *      astNode?: Maybe<EnumValueDefinitionNode>;
  *  }
  * </code>

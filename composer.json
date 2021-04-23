@@ -43,10 +43,8 @@
         "graphql/type-system-implementation": "Any GraphQL Type System implementation"
     },
     "scripts": {
-        "test": [
-            "psalm --no-cache",
-            "phpcs --standard=PSR12 --colors --encoding=utf-8 --extensions=php src -p"
-        ],
+        "psalm": "psalm --no-cache",
+        "phpcs": "phpcs --standard=PSR12 --colors --encoding=utf-8 --extensions=php src -p",
         "phpcbf": "phpcbf -s --colors --standard=PSR12 --encoding=utf-8 --extensions=php src"
     },
     "minimum-stability": "dev",

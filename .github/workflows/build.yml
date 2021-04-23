@@ -10,7 +10,7 @@ jobs:
         # 1) All allowed OS
         os: [ubuntu, windows, macOS]
         # 2) All allowed PHP versions greater than 7.1
-        php: [7.1, 7.2, 7.3, 7.4]
+        php: [7.1, 7.2, 7.3, 7.4, 8.0]
         # 3) Lowest and highest dependency versions
         prefer: ['lowest', 'highest']
     name: ${{ matrix.os }} / PHP ${{ matrix.php }} / ${{ matrix.prefer }}
@@ -38,7 +38,3 @@ jobs:
     - name: Codestyle Check
       if: matrix.os != 'windows'
       run: composer run phpcs
-
-    - name: Security Check
-      if: matrix.os != 'windows'
-      run: composer run security

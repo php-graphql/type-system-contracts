@@ -33,7 +33,7 @@
         }
     },
     "require-dev": {
-        "vimeo/psalm": "^3.6",
+        "vimeo/psalm": "^4.7",
         "squizlabs/php_codesniffer": "^3.5",
         "sensiolabs/security-checker": "^6.0"
     },
@@ -41,10 +41,12 @@
         "graphql/type-system-implementation": "Any GraphQL Type System implementation"
     },
     "scripts": {
-        "psalm": "@php vendor/vimeo/psalm/psalm",
-        "security": "@php vendor/sensiolabs/security-checker/security-checker security:check ./composer.lock",
-        "phpcs": "@php vendor/squizlabs/php_codesniffer/bin/phpcs --standard=PSR12 --colors --encoding=utf-8 --extensions=php src -p",
-        "phpcbf": "@php vendor/squizlabs/php_codesniffer/bin/phpcbf -s --colors --standard=PSR12 --encoding=utf-8 --extensions=php src"
+        "test": [
+            "security-checker security:check ./composer.lock",
+            "psalm --no-cache",
+            "phpcs --standard=PSR12 --colors --encoding=utf-8 --extensions=php src -p"
+        ],
+        "phpcbf": "phpcbf -s --colors --standard=PSR12 --encoding=utf-8 --extensions=php src"
     },
     "minimum-stability": "dev",
     "prefer-stable": true

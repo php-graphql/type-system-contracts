@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace GraphQL\Contracts\TypeSystem;
 
+use GraphQL\Contracts\TypeSystem\Common\DeprecationAwareInterface;
 use GraphQL\Contracts\TypeSystem\Type\InputTypeInterface;
 use GraphQL\Contracts\TypeSystem\Common\TypeAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\NameAwareInterface;
@@ -40,7 +41,8 @@ interface ArgumentInterface extends
     NameAwareInterface,
     DescriptionAwareInterface,
     TypeAwareInterface,
-    DefaultValueAwareInterface
+    DefaultValueAwareInterface,
+    DeprecationAwareInterface
 {
 
 }

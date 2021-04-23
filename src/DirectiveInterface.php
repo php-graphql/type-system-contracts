@@ -14,8 +14,6 @@ namespace GraphQL\Contracts\TypeSystem;
 use GraphQL\Contracts\TypeSystem\Common\NameAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\ArgumentsAwareInterface;
 use GraphQL\Contracts\TypeSystem\Common\DescriptionAwareInterface;
-use GraphQL\Contracts\TypeSystem\Directive\Location;
-use JetBrains\PhpStorm\ExpectedValues;
 
 /**
  * Directives are used by the GraphQL runtime as a way of modifying execution
@@ -48,9 +46,6 @@ use JetBrains\PhpStorm\ExpectedValues;
  *      get [Symbol.toStringTag](): string;
  *  }
  * </code>
- *
- * @psalm-import-type LocationType from Location
- * @see Location
  */
 interface DirectiveInterface extends
     DefinitionInterface,
@@ -68,16 +63,13 @@ interface DirectiveInterface extends
     public function isRepeatable(): bool;
 
     /**
-     * @param LocationType $name
+     * @param string $name
      * @return bool
      */
-    public function hasLocation(
-        #[ExpectedValues(valuesFromClass: Location::class)]
-        string $name
-    ): bool;
+    public function hasLocation(string $name): bool;
 
     /**
-     * @return iterable<array-key, LocationType>
+     * @return iterable<array-key, string>
      */
     public function getLocations(): iterable;
 }

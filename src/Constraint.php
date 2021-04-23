@@ -297,7 +297,7 @@ final class Constraint
      */
     public static function isRequiredArgument(ArgumentInterface $arg): bool
     {
-        return static::isNonNullType($arg->getType()) && ! $arg->hasDefaultValue();
+        return self::isNonNullType($arg->getType()) && ! $arg->hasDefaultValue();
     }
 
     /**
@@ -327,6 +327,6 @@ final class Constraint
      */
     public static function isRequiredInputField(InputFieldInterface $field): bool
     {
-        return static::isNonNullType($field->getType()) && ! $field->hasDefaultValue();
+        return self::isNonNullType($field->getType()) && ! $field->hasDefaultValue();
     }
 }
